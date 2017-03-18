@@ -2,6 +2,7 @@
 #define HOLBERTON_H
 #include <stdarg.h>
 int _printf(const char *format, ...);
+int _putchar(char c);
 /**
  * struct vtype - struct vtype
  * @tp: tp
@@ -10,7 +11,7 @@ int _printf(const char *format, ...);
  */
 typedef struct vtype
 {
-	char *tp;
+	char tp;
 	void (*f)();
 } vtype_t;
 void print_char(va_list valist);
