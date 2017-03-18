@@ -63,10 +63,13 @@ void print_char(va_list valist)
 }
 void print_int(va_list valist)
 {
-
+	int i;
+	i  = va_arg(valist, int);
+	_putchar(i + '0');
 }
 void print_float(va_list valist)
 {
+
 }
 void print_string(va_list valist)
 {
