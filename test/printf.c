@@ -36,31 +36,24 @@ int _printf(const char *format, ...)
 	va_start(valist, format);
 	while (format[i] != '\0')
 	{
-/*
-	for (i = 0; format[i] != '\0'; i++)
-	{
-	*/
 		while (format[i] != '%')
 		{
 			buffer[*index] = format[i];
 			i++;
 			*index += 1;
-			/*printf("%d %d", *index, a);*/
 		}
-		/*it got to to % by this point*/
 		i++;
 		printf("\n");
 
 		while (spec[j].tp != '\0')
 		{
-	        	printf("%c \n", spec[j].tp);
-			
 			if (format[i] == spec[j].tp)
 			{
 				copy_string(valist, buffer, index);
 			}
 	        	j++;
 		}
+		printf("%s\n", buffer);
 	}
 	return (0);
 }

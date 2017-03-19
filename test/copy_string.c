@@ -11,12 +11,9 @@ void copy_string(va_list valist, char *buffer, int *index)
 	char *s;
 
 	s = va_arg(valist, char *);
-	printf("%s", s);
 
-	/*
 	for (i = *index, j =0; s[j] != '\0'; i++, *index += 1, i++, j++)
 	{
 		buffer[*index] = s[j];
 	}
-	*/
 }
