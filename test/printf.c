@@ -11,7 +11,7 @@ int main()
 {
 	char a;
 	a = 'a';
-	_printf("hello %c", "H");
+	_printf("hello %d", 101);
 	return (0);
 }
 
@@ -22,10 +22,10 @@ int _printf(const char *format, ...)
 	va_list valist;
 	int *index;
 	vtype_t spec[] = {
-		{'c', print_char},
-		{'i', print_int},
+		{'c', format_c},
+		{'d', format_d},
 		{'f', print_float},
-		{'s', print_string},
+		{'s', format_s},
 		{'\0', NULL}
 	};
 	i = 0;
@@ -43,19 +43,20 @@ int _printf(const char *format, ...)
 			*index += 1;
 		}
 		i++;
-		printf("\n");
 
 		while (spec[j].tp != '\0')
 		{
 			if (format[i] == spec[j].tp)
 			{
-				copy_string(valist, buffer, index);
+				spec[j].f(valist, buffer, index);
 			}
 	        	j++;
 		}
 		i++;
-		printf("%s\n", buffer);
 	}
+	/*null terminator to buffer for testing purposes*/
+	buffer[*index] = '\0';
+	printf("%s\n", buffer);
 	return (0);
 }
 

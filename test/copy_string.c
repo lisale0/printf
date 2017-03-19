@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
   * copy_string - function that copies the buffer
   * @valist: takes in a list
@@ -10,10 +11,20 @@ void copy_string(va_list valist, char *buffer, int *index)
 	int i, j;
 	char *s;
 
-	s = va_arg(valist, char *);
+	s = va_arg(valist, char*);
 
-	for (i = *index, j =0; s[j] != '\0'; i++, *index += 1, i++, j++)
+	for (i = *index, j = 0; s[j] != '\0'; i++, *index += 1, i++, j++)
 	{
 		buffer[*index] = s[j];
 	}
+}
+
+void copy_char(va_list valist, char *buffer, int *index)
+{
+	int i, j;
+        char s;
+
+        s = va_arg(valist, int);
+
+	buffer[*index] = s;
 }
