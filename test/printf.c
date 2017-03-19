@@ -11,15 +11,17 @@ int main()
 {
 	char a;
 	a = 'a';
-	/*
+	
 	_printf("hello %c %d %s\n", 'H', 1203484, "hello");
 	printf("Expect: hello H 1203484 hello\n");
 	
 	_printf("hello %c %s %d\n", 'H', "hello", 1203484);
 	printf("Expect: hello H hello 1203484\n");
-	*/
+	
 
-	printf("%d", 25432432);
+	
+
+	_printf("%d", 2543);
 	return (0);
 }
 
@@ -64,7 +66,7 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	/*null terminator to buffer for testing purposes*/
-	//buffer[*index] = '\0';
+	buffer[*index] = '\0';
 	printf("%s", buffer);
 	return (0);
 }

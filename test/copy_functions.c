@@ -24,8 +24,10 @@ void format_d(va_list valist, char *buffer, int *index)
 	char num_str[numlen];
 
 	tostring(num_str, i);
-	for (i = *index, j = 0; num_str[j] != '\0'; *index += 1, i++, j++)
+	printf("num_str: %s\n", num_str);
+	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
         {
+		printf("%d\n", j);
                 buffer[*index] = num_str[j];
         }
 }
