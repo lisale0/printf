@@ -5,16 +5,15 @@
   * @buffer: takes in a buffer
   * @index: taktes in the index
   */
-int copy_string(va_list valist, char *buffer, int index)
+void copy_string(va_list valist, char *buffer, int *index)
 {
 	int i;
 	char *s;
 
 	s = va_arg(valist, char *);
-	for (i = 0; s[i] != '\0'; i++, index++)
+	for (i = 0; s[i] != '\0'; i++, *index++)
 	{
-		buffer[index] = s[i];
+		buffer[*index] = s[i];
 	}
-	return (index);
 }
 

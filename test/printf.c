@@ -18,7 +18,9 @@ int main()
 int _printf(const char *format, ...)
 {
 	const char *t;
-	int i;
+	char buffer[1024];
+	int i, j;
+	int *index;
 	va_list valist;
 
 	vtype_t spec[] = {
@@ -29,27 +31,29 @@ int _printf(const char *format, ...)
 		{'\0', NULL}
 	};
 	i = 0;
+	j = 0;
+	index = 0;
 	va_start(valist, format);
-	for (t = format; *t != '\0'; t++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		while (*t != '%')
+		while (format[i] != '%')
 		{
-			putchar(*t);
-			t++;
+			buffer[i] = format[i];
+			index++;
 		}
 		/*it got to to % by this point*/
-		t++;
+		i++;
 		printf("\n");
 
-		while (spec[i].tp != '\0')
+		while (spec[j].tp != '\0')
 		{
 			printf("%c ", *t);
-			printf("%c \n", spec[i].tp);
-			if (*t == spec[i].tp)
+			printf("%c \n", spec[j].tp);
+			if (format[i] == spec[j].tp)
 			{
-				spec[i].f(valist);
+				copy_string(valist, buffer, index);
 			}
-			i++;
+			j++;
 		}
 	}
 	return (0);
