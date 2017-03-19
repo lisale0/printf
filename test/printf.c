@@ -11,7 +11,7 @@ int main()
 {
 	char a;
 	a = 'a';
-	_printf("hello %c", 'H');
+	_printf("hello %c", "H");
 	return (0);
 }
 
@@ -53,6 +53,7 @@ int _printf(const char *format, ...)
 			}
 	        	j++;
 		}
+		i++;
 		printf("%s\n", buffer);
 	}
 	return (0);
