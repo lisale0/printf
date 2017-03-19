@@ -11,7 +11,7 @@ int main()
 {
 	char a;
 	a = 'a';
-	_printf("hello %c", "H");
+	_printf("hello %s", "H");
 	return (0);
 }
 
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
-		{'s', print_string},
+		{'s', copy_string},
 		{'\0', NULL}
 	};
 	i = 0;
@@ -43,13 +43,12 @@ int _printf(const char *format, ...)
 			*index += 1;
 		}
 		i++;
-		printf("\n");
 
 		while (spec[j].tp != '\0')
 		{
 			if (format[i] == spec[j].tp)
 			{
-				copy_string(valist, buffer, index);
+				spec[j].f(valist, buffer, index);
 			}
 	        	j++;
 		}
