@@ -11,7 +11,12 @@ int main()
 {
 	char a;
 	a = 'a';
-	_printf("hello %c  %s", 'H', "Hello");
+      
+	_printf("hello %c %d %s\n", 'H', 1203484, "hello");
+	printf("Expect: hello H 1203484 hello\n");
+	_printf("hello %c %s %d\n", 'H', "hello", 1203484);
+	printf("Expect: hello H hello 1203484\n");
+	_printf("%d",1232);
 	return (0);
 }
 
@@ -43,7 +48,7 @@ int _printf(const char *format, ...)
 			*index += 1;
 		}
 		i++;
-
+		j = 0;
 		while (spec[j].tp != '\0')
 		{
 			if (format[i] == spec[j].tp)
@@ -57,6 +62,6 @@ int _printf(const char *format, ...)
 	}
 	/*null terminator to buffer for testing purposes*/
 	//buffer[*index] = '\0';
-	printf("%s\n", buffer);
+	printf("%s", buffer);
 	return (0);
 }

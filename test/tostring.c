@@ -15,7 +15,8 @@ char *tostring(char str[], int num)
 		num = num / 10;
 		str[len - (i + 1)] = rem + '0';
 	}
-	str[len] = '\0';
+
+        str[len] = '\0';
 	return (str);
 }
 

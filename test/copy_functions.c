@@ -24,10 +24,12 @@ void format_d(va_list valist, char *buffer, int *index)
 	char num_str[numlen];
 
 	tostring(num_str, i);
-	for (i = *index, j = 0; j < numlen; i++, *index += 1, i++, j++)
+	for (i = *index, j = 0; num_str[j] != '\0'; *index += 1, i++, j++)
         {
+		printf("%d\n", j);
                 buffer[*index] = num_str[j];
         }
+	printf("%s", buffer);
 }
 /**
   * copy_string - function that copies string to buffer
@@ -44,7 +46,7 @@ void format_s(va_list valist, char *buffer, int *index)
 
 	s = va_arg(valist, char*);
 	strlen = _strlen(s);
-	for (i = *index, j = 0; j <= strlen; i++, *index += 1, i++, j++)
+	for (i = *index, j = 0; s[j] != '\0';  *index += 1, i++, j++)
 	{
 		buffer[*index] = s[j];
 	}
