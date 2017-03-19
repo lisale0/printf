@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void format_f(va_list valist, char *buffer, int *index)
+{
+
+	
+}
+
 /**
  *
  *
@@ -33,12 +39,12 @@ void format_d(va_list valist, char *buffer, int *index)
   */
 void format_s(va_list valist, char *buffer, int *index)
 {
-	int i, j;
+	int i, j, strlen;
 	char *s;
 
 	s = va_arg(valist, char*);
-
-	for (i = *index, j = 0; s[j] != '\0'; i++, *index += 1, i++, j++)
+	strlen = _strlen(s);
+	for (i = *index, j = 0; j <= strlen; i++, *index += 1, i++, j++)
 	{
 		buffer[*index] = s[j];
 	}
@@ -56,7 +62,6 @@ void format_c(va_list valist, char *buffer, int *index)
         char s;
 
         s = va_arg(valist, int);
-
 	buffer[*index] = s;
 	*index += 1;
 }
