@@ -21,4 +21,5 @@ void print_string(va_list valist);
 void _write_buffer(char *s);
 int _strlen(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n);
+int copy_string(va_list valist, char *buffer, int index);
 #endif /* HOLBERTON_H */
