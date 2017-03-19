@@ -59,8 +59,7 @@ int _printf(const char *format, ...)
 			{
 				copy_string(valist, buffer, index);
 			}
-		       
-			j++;
+	        	j++;
 		}
 	}
 	return (0);
