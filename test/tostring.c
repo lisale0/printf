@@ -18,7 +18,6 @@ char *tostring(char str[], int num)
 	}
 
         str[len] = '\0';
-	printf("str from tostring %s\n", str);
 	return (str);
 }
 

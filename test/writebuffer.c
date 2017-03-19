@@ -3,11 +3,7 @@
 #define BUFSIZE 1024
 #include <stdio.h>
 #include <stdlib.h>
-int main()
-{
-	_write_buffer("Hello\n");
-	return (0);
-}
+
 void _write_buffer(char *s)
 {
 	char temp[BUFSIZE];
