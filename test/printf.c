@@ -11,12 +11,15 @@ int main()
 {
 	char a;
 	a = 'a';
-      
+	/*
 	_printf("hello %c %d %s\n", 'H', 1203484, "hello");
 	printf("Expect: hello H 1203484 hello\n");
+	
 	_printf("hello %c %s %d\n", 'H', "hello", 1203484);
 	printf("Expect: hello H hello 1203484\n");
-	_printf("%d",1232);
+	*/
+
+	printf("%d", 25432432);
 	return (0);
 }
 

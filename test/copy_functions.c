@@ -26,10 +26,8 @@ void format_d(va_list valist, char *buffer, int *index)
 	tostring(num_str, i);
 	for (i = *index, j = 0; num_str[j] != '\0'; *index += 1, i++, j++)
         {
-		printf("%d\n", j);
                 buffer[*index] = num_str[j];
         }
-	printf("%s", buffer);
 }
 /**
   * copy_string - function that copies string to buffer
