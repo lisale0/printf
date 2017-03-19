@@ -7,13 +7,16 @@
   */
 void copy_string(va_list valist, char *buffer, int *index)
 {
-	int i;
+	int i, j;
 	char *s;
 
 	s = va_arg(valist, char *);
-	for (i = 0; s[i] != '\0'; i++, *index++)
-	{
-		buffer[*index] = s[i];
-	}
-}
+	printf("%s", s);
 
+	/*
+	for (i = *index, j =0; s[j] != '\0'; i++, *index += 1, i++, j++)
+	{
+		buffer[*index] = s[j];
+	}
+	*/
+}
