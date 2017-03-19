@@ -18,3 +18,13 @@ void copy_string(va_list valist, char *buffer, int *index)
 		buffer[*index] = s[j];
 	}
 }
+
+void copy_char(va_list valist, char *buffer, int *index)
+{
+	int i, j;
+        char s;
+
+        s = va_arg(valist, int);
+
+	buffer[*index] = s;
+}

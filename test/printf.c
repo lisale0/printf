@@ -11,7 +11,7 @@ int main()
 {
 	char a;
 	a = 'a';
-	_printf("hello %s", "H");
+	_printf("hello %c", 'H');
 	return (0);
 }
 
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	va_list valist;
 	int *index;
 	vtype_t spec[] = {
-		{'c', print_char},
+		{'c', copy_char},
 		{'i', print_int},
 		{'f', print_float},
 		{'s', copy_string},
