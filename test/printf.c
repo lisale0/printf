@@ -53,8 +53,10 @@ int _printf(const char *format, ...)
 	        	j++;
 		}
 		i++;
-		printf("%s\n", buffer);
 	}
+	/*null terminator to buffer for testing purposes*/
+	buffer[*index] = '\0';
+	printf("%s\n", buffer);
 	return (0);
 }
 
