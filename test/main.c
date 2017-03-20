@@ -40,5 +40,7 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 	//_printf("Unknown:[%r]\n");
 	//printf("Unknown:[%r]\n");
+	_printf("Unsigned:[%u]\n", ui);
+        printf("Unsigned:[%u]\n", ui);
 	return (0);
 }
