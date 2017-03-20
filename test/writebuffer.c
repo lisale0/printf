@@ -3,21 +3,10 @@
 #define BUFSIZE 1024
 #include <stdio.h>
 #include <stdlib.h>
-int main()
-{
-	_write_buffer("Hello\n");
-	return (0);
-}
-void _write_buffer(char *s)
-{
-	char temp[BUFSIZE];
-	int slen, i;
-	slen = _strlen(s);
 
-	_memcpy(temp, s, slen);
-
-	for (i = 0; i < slen  && i <= BUFSIZE; i++)
-		write(1, (void*)&temp[i], 1);
+void _write_buffer(char *buffer, int *index)
+{
+	write(1, buffer, *index);
 
 }
 
