@@ -31,7 +31,6 @@ int _printf(const char *format, ...)
 	vtype_t spec[] = {
 		{'c', format_c},
 		{'d', format_d},
-		{'f', format_f},
 		{'s', format_s},
 		{'i', format_i},
 		{'\0', NULL}

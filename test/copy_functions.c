@@ -13,7 +13,7 @@ void format_i(va_list valist, char *buffer, int *index)
 
 	char num_str[numlen];
 
-	tostring(num_str, i);
+	itos(num_str, i);
 	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
         {
 		if (*index == 1024)
