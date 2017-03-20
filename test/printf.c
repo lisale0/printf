@@ -37,6 +37,8 @@ int _printf(const char *format, ...)
 		{'d', format_d},
 		{'s', format_s},
 		{'i', format_i},
+		{'u', format_u},
+		{'%', format_perc},
 		{'\0', NULL}
 	};
 	i = 0;
@@ -64,21 +66,7 @@ int _printf(const char *format, ...)
 		{
 			break;
 		}
-		while (format[i] == '%')
-		{
-			if (format[i + 1] != '%')
-			{
-				//printf("--%c--",format[i]);
-				//printf("--%c--",format[i+1]);
-				break;
-			}
-			buffer[*index] = format[i];
-			i++;
-			*index += 1;
-//                      *index += 1;
 
-		}
-		//*index += 1;
 		if (format[i] == '%')
 		{
 			i++;

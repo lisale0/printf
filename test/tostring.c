@@ -40,6 +40,33 @@ char *itos(char str[], int num)
         return (str);
 }
 
+
+char *utos(char str[], unsigned int num)
+{
+	int i, rem, len = 0, n, origin;
+	n = num;
+	origin = num;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+
+	i = 0;
+
+	while(i < len)
+	{
+		rem = num % 10;
+		num = num / 10;
+
+		str[len - (i + 1)] = rem + '0';
+		i++;
+	}
+
+	str[len] = '\0';
+	return (str);
+}
+
 int num_len(int num)
 {
 	int n, len;
