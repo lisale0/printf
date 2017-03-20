@@ -26,3 +26,18 @@ void rot13(char *s)
 		}
 	}
 }
+
+void format_R(va_list valist, char *buffer, char *index)
+{
+	int i, strlen;
+	char *s;
+
+	s = va_arg(valist, char *);
+	strlen = _strlen(s);
+
+	for (i = *index)
+
+
+
+
+}
