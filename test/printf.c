@@ -11,7 +11,17 @@ int main()
 {
 	char a;
 	a = 'a';
-	_printf("hello %d", 101);
+	
+	_printf("hello %c %d %s\n", 'H', 1203484, "hello");
+	printf("Expect: hello H 1203484 hello\n");
+	
+	_printf("hello %c %s %d\n", 'H', "hello", 1203484);
+	printf("Expect: hello H hello 1203484\n");
+	
+
+	
+
+	_printf("%d", 2543);
 	return (0);
 }
 
@@ -24,7 +34,7 @@ int _printf(const char *format, ...)
 	vtype_t spec[] = {
 		{'c', format_c},
 		{'d', format_d},
-		{'f', print_float},
+		{'f', format_f},
 		{'s', format_s},
 		{'\0', NULL}
 	};
@@ -43,12 +53,13 @@ int _printf(const char *format, ...)
 			*index += 1;
 		}
 		i++;
-
+		j = 0;
 		while (spec[j].tp != '\0')
 		{
 			if (format[i] == spec[j].tp)
 			{
 				spec[j].f(valist, buffer, index);
+				break;
 			}
 	        	j++;
 		}
@@ -56,27 +67,6 @@ int _printf(const char *format, ...)
 	}
 	/*null terminator to buffer for testing purposes*/
 	buffer[*index] = '\0';
-	printf("%s\n", buffer);
+	printf("%s", buffer);
 	return (0);
-}
-
-void print_char(va_list valist)
-{
-	char a;
-	a = va_arg(valist, int);
-	_putchar(a);
-}
-void print_int(va_list valist)
-{
-	int i;
-	i  = va_arg(valist, int);
-	_putchar(i + '0');
-}
-void print_float(va_list valist)
-{
-
-}
-void print_string(va_list valist)
-{
-
 }
