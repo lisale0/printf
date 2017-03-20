@@ -4,6 +4,7 @@
  * @s: takes in a string
  *
  */
+
 void rot13(char *s)
 {
 	int i, j;

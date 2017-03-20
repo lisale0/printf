@@ -6,21 +6,25 @@
  *
  *
  */
-
+/*
 int main()
 {
 	char a;
 	a = 'a';
 	int i = 8;
-
+	int len;
+	//len = _printf("Let's try to printf a simple sentence.\n");
 	//printf("Expected: hello %c %d %s\n", 'H', 1203484, "hello");
 	//_printf("hello %c %s %d\n", 'H', "hello", 1203484);
 	//printf("hello %c %s %d\n", 'H', "hello", 1203484);
 	//_printf("%d\n", 2543);
-
-	_printf("We will prevail %i", i);
-	return (0);
-}
+	/*
+	_printf("We will prevail %%%d %s\n", -97, "hello");
+	_printf("Length:[%d, %i]\n", len, len);
+	*/
+//_printf("Negative:[%d]\n", -762);
+	//return (0);
+//}
 
 int _printf(const char *format, ...)
 {
@@ -79,5 +83,5 @@ int _printf(const char *format, ...)
 	/*null terminator to buffer for testing purposes*/
 	buffer[*index] = '\0';
 	_write_buffer(buffer, index);
-	return (0);
+	return (*index);
 }

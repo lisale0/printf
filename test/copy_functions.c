@@ -11,8 +11,12 @@ void format_i(va_list valist, char *buffer, int *index)
 
 	numlen = num_len(i);
 
+	if (i < 0)
+	{
+		*index += 1;
+		numlen += 1;
+	}
 	char num_str[numlen];
-
 	itos(num_str, i);
 	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
         {
@@ -37,8 +41,12 @@ void format_d(va_list valist, char *buffer, int *index)
         i = va_arg(valist, int);
 
 	numlen = num_len(i);
-
-	char num_str[numlen];
+	if (i < 0)
+        {
+                //*index += 1;
+                numlen += 1;
+        }
+        char num_str[numlen];
 
 	itos(num_str, i);
 	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
