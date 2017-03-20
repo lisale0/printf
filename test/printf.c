@@ -18,7 +18,7 @@ int main()
 	//printf("hello %c %s %d\n", 'H', "hello", 1203484);
 	//_printf("%d\n", 2543);
 
-	_printf("We will prevail %i", i);
+	_printf("We will prevail %d\n", -97);
 	return (0);
 }
 
