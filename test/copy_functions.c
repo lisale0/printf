@@ -43,7 +43,7 @@ void format_d(va_list valist, char *buffer, int *index)
 	numlen = num_len(i);
 	if (i < 0)
         {
-                *index += 1;
+                //*index += 1;
                 numlen += 1;
         }
         char num_str[numlen];
