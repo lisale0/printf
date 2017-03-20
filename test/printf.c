@@ -1,30 +1,6 @@
 #include <stdarg.h>
 #include "holberton.h"
 #include <stdio.h>
-/**
- * in-file testing
- *
- *
- */
-/*
-int main()
-{
-	char a;
-	a = 'a';
-	int i = 8;
-	int len;
-	//len = _printf("Let's try to printf a simple sentence.\n");
-	//printf("Expected: hello %c %d %s\n", 'H', 1203484, "hello");
-	//_printf("hello %c %s %d\n", 'H', "hello", 1203484);
-	//printf("hello %c %s %d\n", 'H', "hello", 1203484);
-	//_printf("%d\n", 2543);
-	/*
-	_printf("We will prevail %%%d %s\n", -97, "hello");
-	_printf("Length:[%d, %i]\n", len, len);
-	*/
-//_printf("Negative:[%d]\n", -762);
-	//return (0);
-//}
 
 int _printf(const char *format, ...)
 {
@@ -39,6 +15,10 @@ int _printf(const char *format, ...)
 		{'i', format_i},
 		{'u', format_u},
 		{'%', format_perc},
+		{'x', format_h},
+		{'X', format_ch},
+		{'o', format_o},
+		{'b', format_b},
 		{'\0', NULL}
 	};
 	i = 0;
