@@ -24,7 +24,7 @@ Format tags implemented in _printf
 | **specifier** | **output**                            |
 |---------------|---------------------------------------|
 | c             | characters                            |
-| s          | string of characters                  |
+| s             | string of characters                  |
 | i or d        | signed decimal int                    |
 | R             | rot13 characters to string            |
 

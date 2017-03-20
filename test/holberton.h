@@ -32,4 +32,5 @@ char *tostring(char str[], int num);
 int num_len(int num);
 void reset_buffer(char buffer[]);
 void *rot13(char *s);
+void rev_string(char *s);
 #endif /* HOLBERTON_H */

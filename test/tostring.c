@@ -1,5 +1,9 @@
 #include <stdio.h>
-
+/**
+*
+*
+*
+*/
 char *itos(char str[], int num)
 {
 	int i, rem, len = 0, n, origin;
@@ -47,4 +51,30 @@ int num_len(int num)
                 n /= 10;
         }
 	return len;
+}
+
+/**
+* rev_string = reverses a string
+* @takes in a string
+*/
+
+void rev_string(char *s)
+{
+	int i, c;
+	char temp;
+
+	c = 0;
+	while (s[c] != '\0')
+	{
+		c++;
+	}
+	c--;
+
+	for (i = 0; i < c; i++)
+	{
+		temp = s[i];
+		s[i] = s[c];
+		s[c] = temp;
+	}
+	
 }
