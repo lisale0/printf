@@ -11,13 +11,16 @@ int main()
 {
 	char a;
 	a = 'a';
-
-	//printf("Expected: hello %c %d %s\n", 'H', 1203484, "hello");
-	//_printf("hello %c %s %d\n", 'H', "hello", 1203484);
+	/*
+	_printf("hello %c %s %d %s\n", 'H', "hello", 1203484, "hello");
+	printf("Expected: hello %c %d %s\n", 'H', 1203484, "hello");
 	//printf("hello %c %s %d\n", 'H', "hello", 1203484);
-	//_printf("%d\n", 2543);
-
-	_printf("We will prevail We wi");
+	_printf("%d\n", 2543);
+	*/
+	/**
+	_printf("We Will Prevail We Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will PrevailWe Will Prevail");
+	*/
+	_printf("%f\n", 34.54);
 	return (0);
 }
 
@@ -39,7 +42,6 @@ int _printf(const char *format, ...)
 	a = 0;
 
 	index = &a;
-	//printf("INDEX %d", *index);
 	va_start(valist, format);
 	while (format[i] != '\0')
 	{
@@ -75,7 +77,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	/*null terminator to buffer for testing purposes*/
 	buffer[*index] = '\0';
 	_write_buffer(buffer, index);
 	return (0);

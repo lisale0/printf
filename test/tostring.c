@@ -1,5 +1,18 @@
 #include <stdio.h>
-char *tostring(char str[], int num)
+
+int float_len(double d)
+{
+	int i;
+
+	i= 0;
+	while ( 1 - d < 0 )
+	{
+		d /= 10;
+		++i;
+	}
+        return (6 + i + 1);
+}
+char *itos(char str[], int num)
 {
 	int i, rem, len = 0, n;
 

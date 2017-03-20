@@ -24,13 +24,10 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 void format_s(va_list valist, char *buffer, int *index);
 void format_c(va_list valist, char *buffer, int *index);
 void format_d(va_list valist, char *buffer, int *index);
-void format_f(va_list valist, char *buffer, int *index);
-char *tostring(char str[], int num);
+char *itos(char str[], int num);
 int num_len(int num);
-<<<<<<< HEAD
+int float_len(double f);
 void reset_buffer(char *buffer);
-=======
 void reset_buffer(char buffer[]);
 void *rot13(char *s);
->>>>>>> 2811a457373b64de5ef0a782df55228dc6982cfd
 #endif /* HOLBERTON_H */

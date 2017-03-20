@@ -2,16 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void format_f(va_list valist, char *buffer, int *index)
-{
 
-}
-/**
- *
- *
- *
- *
- */
 void format_d(va_list valist, char *buffer, int *index)
 {
 	int i, j, numlen;
@@ -21,7 +12,7 @@ void format_d(va_list valist, char *buffer, int *index)
 
 	char num_str[numlen];
 
-	tostring(num_str, i);
+	itos(num_str, i);
 	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
         {
 		if (*index == 1024)
@@ -81,12 +72,4 @@ void format_c(va_list valist, char *buffer, int *index)
 	}
 	buffer[*index] = s;
 	*index += 1;
-}
-char* itoa(int val, int base){
-	static char buf[32] = {0};
-	int i = 30;
-
-	for(; val && i ; --i, val /= base)
-		buf[i] = "0123456789abcdef"[val % base];
-	return &buf[i+1];
 }
