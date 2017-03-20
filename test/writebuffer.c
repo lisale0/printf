@@ -4,16 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void _write_buffer(char *s)
+void _write_buffer(char *buffer, int *index)
 {
-	char temp[BUFSIZE];
-	int slen, i;
-	slen = _strlen(s);
-
-	_memcpy(temp, s, slen);
-
-	for (i = 0; i < slen  && i <= BUFSIZE; i++)
-		write(1, (void*)&temp[i], 1);
+	write(1, buffer, *index);
 
 }
 

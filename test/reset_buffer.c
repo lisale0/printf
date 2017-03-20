@@ -1,9 +1,10 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
   * start_reset_buffer - function that initializes and resets a buffer
   * @buffer: buffer size
   */
-void reset_buffer(char buffer[])
+void reset_buffer(char *buffer)
 {
 	int i;
 

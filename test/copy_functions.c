@@ -4,8 +4,8 @@
 
 void format_f(va_list valist, char *buffer, int *index)
 {
-}
 
+}
 /**
  *
  *
@@ -24,7 +24,13 @@ void format_d(va_list valist, char *buffer, int *index)
 	tostring(num_str, i);
 	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
         {
-                buffer[*index] = num_str[j];
+		if (*index == 1024)
+		{
+			_write_buffer(buffer, index);
+			reset_buffer(buffer);
+			*index = 0;
+		}
+		buffer[*index] = num_str[j];
         }
 }
 /**
@@ -42,8 +48,15 @@ void format_s(va_list valist, char *buffer, int *index)
 
 	s = va_arg(valist, char*);
 	strlen = _strlen(s);
+
 	for (i = *index, j = 0; s[j] != '\0';  *index += 1, i++, j++)
 	{
+		if (*index == 1024)
+                {
+                        _write_buffer(buffer, index);
+                        reset_buffer(buffer);
+			*index = 0;
+                }
 		buffer[*index] = s[j];
 	}
 }
@@ -60,6 +73,12 @@ void format_c(va_list valist, char *buffer, int *index)
         char s;
 
         s = va_arg(valist, int);
+	if (*index == 1024)
+	{
+		_write_buffer(buffer, index);
+		reset_buffer(buffer);
+		*index = 0;
+	}
 	buffer[*index] = s;
 	*index += 1;
 }
