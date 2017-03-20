@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
-  * rot13 - converts string to rot13
-  * @s: takes in a string
-  *
-  */
+ * rot13 - converts string to rot13
+ * @s: takes in a string
+ *
+ */
 void rot13(char *s)
 {
 	int i, j;

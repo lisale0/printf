@@ -47,9 +47,9 @@ int _printf(const char *format, ...)
 	{
 		while (format[i] != '%' &&  format[i] != '\0')
 		{
-        		if (*index == 1024)
+			if (*index == 1024)
 			{
-		        	_write_buffer(buffer, index);
+				_write_buffer(buffer, index);
 				reset_buffer(buffer);
 				*index = 0;
 			}
