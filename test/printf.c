@@ -1,6 +1,4 @@
-#include <stdarg.h>
 #include "holberton.h"
-#include <stdio.h>
 /**
   * _printf - function that prints based on format specifier
   * @format: takes in format specifier
@@ -17,7 +15,6 @@ int _printf(const char *format, ...)
 		{'u', format_u}, {'%', format_perc}, {'x', format_h}, {'X', format_ch},
 		{'o', format_o}, {'b', format_b}, {'\0', NULL}
 	};
-
 	va_start(valist, format);
 	while (format[i] != '\0')
 	{
@@ -47,7 +44,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	/*null terminator to buffer for testing purposes*/
 	va_end(valist);
 	buffer[*index] = '\0';
 	_write_buffer(buffer, index);
