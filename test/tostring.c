@@ -6,7 +6,7 @@
 */
 char *itos(char str[], int num)
 {
-	int i, rem, len = 0, n;
+	int i, rem, len = 0, n, origin;
 
         n = num;
         origin = num;
@@ -43,9 +43,9 @@ char *itos(char str[], int num)
 
 char *utos(char str[], unsigned int num)
 {
-	int i, rem, len = 0, n, origin;
+	int i, rem, len = 0, n;
+
 	n = num;
-	origin = num;
 	while (n != 0)
 	{
 		len++;
