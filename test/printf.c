@@ -21,8 +21,7 @@ int _printf(const char *format, ...)
 		for (; format[i] != '%' && format[i] != '\0'; *index += 1, i++)
 		{
 			if (*index == 1024)
-			{
-				_write_buffer(buffer, index);
+			{	_write_buffer(buffer, index);
 				reset_buffer(buffer);
 				*index = 0;
 			}
@@ -36,8 +35,7 @@ int _printf(const char *format, ...)
 			for (j = 0; spec[j].tp != '\0'; j++)
 			{
 				if (format[i] == spec[j].tp)
-				{
-					spec[j].f(valist, buffer, index);
+				{	spec[j].f(valist, buffer, index);
 					break;
 				}
 			}
