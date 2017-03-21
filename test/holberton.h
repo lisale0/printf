@@ -36,4 +36,8 @@ int num_len(int num);
 void reset_buffer(char buffer[]);
 void *rot13(char *s);
 void rev_string(char *s);
+void format_h(va_list valist, char *buffer, int *index);
+void format_ch(va_list valist, char *buffer, int *index);
+void format_o(va_list valist, char *buffer, int *index);
+void format_b(va_list valist, char *buffer, int *index);
 #endif /* HOLBERTON_H */

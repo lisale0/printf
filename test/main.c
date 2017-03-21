@@ -38,6 +38,7 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+	_printf("Binary: [%b], %b\n", 0, 45564645);
 	//_printf("Unknown:[%r]\n");
 	//printf("Unknown:[%r]\n");
 	_printf("Unsigned:[%u]\n", ui);
