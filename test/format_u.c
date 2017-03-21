@@ -1,6 +1,15 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+/**
+ * format_u - specificer for u
+ * @valist: valist
+ * @buffer: buffer
+ * @index: index
+ *
+ * Return: void
+ */
 void format_u(va_list valist, char *buffer, int *index)
 {
 	unsigned int i;
@@ -24,7 +33,14 @@ void format_u(va_list valist, char *buffer, int *index)
 		buffer[*index] = num_str[j];
 	}
 }
-
+/**
+ * format_h - specificer for h
+ * @valist: valist
+ * @buffer: buffer
+ * @index: index
+ *
+ * Return: void
+ */
 void format_h(va_list valist, char *buffer, int *index)
 {
 	unsigned int n;
@@ -45,7 +61,14 @@ void format_h(va_list valist, char *buffer, int *index)
 	}
 
 }
-
+/**
+ * format_ch - specificer for ch
+ * @valist: valist
+ * @buffer: buffer
+ * @index: index
+ *
+ * Return: void
+ */
 void format_ch(va_list valist, char *buffer, int *index)
 {
 	unsigned int n;
@@ -67,7 +90,14 @@ void format_ch(va_list valist, char *buffer, int *index)
 	}
 
 }
-
+/**
+ * format_o - specificer for o
+ * @valist: valist
+ * @buffer: buffer
+ * @index: index
+ *
+ * Return: void
+ */
 void format_o(va_list valist, char *buffer, int *index)
 {
 	unsigned int n;
@@ -88,7 +118,14 @@ void format_o(va_list valist, char *buffer, int *index)
 		buffer[*index] = oct[i];
 	}
 }
-
+/**
+ * format_b - specificer for b
+ * @valist: valist
+ * @buffer: buffer
+ * @index: index
+ *
+ * Return: void
+ */
 void format_b(va_list valist, char *buffer, int *index)
 {
 	unsigned int n;
