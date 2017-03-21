@@ -1,8 +1,7 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 #include <stdarg.h>
-int _printf(const char *format, ...);
-int _putchar(char c);
+#include <stdio.h>
 /**
  * struct vtype - struct vtype
  * @tp: tp
@@ -14,6 +13,8 @@ typedef struct vtype
 	char tp;
 	void (*f)();
 } vtype_t;
+int _printf(const char *format, ...);
+int _putchar(char c);
 void print_char(va_list valist);
 void print_int(va_list valist);
 void print_float(va_list valist);
@@ -40,4 +41,6 @@ void format_h(va_list valist, char *buffer, int *index);
 void format_ch(va_list valist, char *buffer, int *index);
 void format_o(va_list valist, char *buffer, int *index);
 void format_b(va_list valist, char *buffer, int *index);
+void format_r(va_list valist, char *buffer, int *index);
+void format_R(va_list valist, char *buffer, int *index);
 #endif /* HOLBERTON_H */
