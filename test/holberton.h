@@ -31,6 +31,8 @@ int num_len(int num);
 int float_len(double f);
 void format_i(va_list valist, char *buffer, int *index);
 void format_u(va_list valist, char *buffer, int *index);
+void format_p(va_list valist, char *buffer, int *index);
+void format_lx(va_list valist, char *buffer, int *index);
 void format_perc(va_list valist, char *buffer, int *index);
 char *tostring(char str[], int num);
 int num_len(int num);
