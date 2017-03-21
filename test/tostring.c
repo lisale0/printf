@@ -6,7 +6,7 @@
 */
 char *itos(char str[], int num)
 {
-	int i, rem, len = 0, n, origin;
+	int i, rem, len = 0, n;
 
         n = num;
         origin = num;
@@ -103,5 +103,21 @@ void rev_string(char *s)
 		s[i] = s[c];
 		s[c] = temp;
 	}
-	
+}
+/**
+ * _strlen - count the length of a string
+ *  @s: char pointer
+ *
+ * Return: integer
+ */
+int _strlen(char *s)
+{
+	int i, count;
+
+	count = 0;
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		count++;
+	}
+	return (i);
 }

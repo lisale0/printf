@@ -14,11 +14,12 @@ void format_u(va_list valist, char *buffer, int *index)
 {
 	unsigned int i;
 	int j, numlen;
+	char *num_str;
 
 	i = va_arg(valist, int);
 	numlen = num_len(i);
 
-	char num_str[numlen];
+	num_str = malloc(numlen * sizeof(char));
 
 	utos(num_str, i);
 
@@ -44,11 +45,13 @@ void format_u(va_list valist, char *buffer, int *index)
 void format_h(va_list valist, char *buffer, int *index)
 {
 	unsigned int n;
-	int i, j;
+	int i;
+	char *hexvalues;
+	char *hex;
 
 	n = va_arg(valist, int);
-	char hexvalues[] = "0123456789abcdef";
-	char *hex = malloc(9 * sizeof(char));
+	hexvalues = "0123456789abcdef";
+	hex = malloc(9 * sizeof(char));
 
 	for (i = 0; n != 0; i++)
 	{
@@ -72,12 +75,14 @@ void format_h(va_list valist, char *buffer, int *index)
 void format_ch(va_list valist, char *buffer, int *index)
 {
 	unsigned int n;
-	int i, j;
+	int i;
+	char *hexvalues;
+	char *hex;
 
 	n = va_arg(valist, int);
-	char hexvalues[] = "0123456789ABCDEF";
+	hexvalues = "0123456789ABCDEF";
 
-	char *hex = malloc(9 * sizeof(char));
+	hex = malloc(9 * sizeof(char));
 
 	for (i = 0; n != 0; i++)
 	{
@@ -101,12 +106,14 @@ void format_ch(va_list valist, char *buffer, int *index)
 void format_o(va_list valist, char *buffer, int *index)
 {
 	unsigned int n;
-	int i, j;
+	int i;
+	char *octvalues;
+	char *oct;
 
 	n = va_arg(valist, int);
-	char octvalues[] = "0123456789ABCDEF";
+	octvalues = "0123456789ABCDEF";
 
-	char *oct = malloc(12 * sizeof(char));
+	oct = malloc(12 * sizeof(char));
 
 	for (i = 0; n != 0; i++)
 	{
@@ -129,12 +136,14 @@ void format_o(va_list valist, char *buffer, int *index)
 void format_b(va_list valist, char *buffer, int *index)
 {
 	unsigned int n;
-	int i, j;
+	int i;
+	char *binaryvalues;
+	char *binary;
 
 	n = va_arg(valist, int);
-	char binaryvalues[] = "01";
+	binaryvalues = "01";
 
-	char *binary = malloc(33 * sizeof(char));
+	binary = malloc(33 * sizeof(char));
 
 	if (n == 0)
 	{
