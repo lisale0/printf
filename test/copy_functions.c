@@ -14,6 +14,7 @@
 void format_i(va_list valist, char *buffer, int *index)
 {
 	int i, j, numlen;
+	char *num_str;
 
 	i = va_arg(valist, int);
 	numlen = num_len(i);
@@ -22,7 +23,7 @@ void format_i(va_list valist, char *buffer, int *index)
 		*index += 1;
 		numlen += 1;
 	}
-	char num_str[numlen];
+	num_str = malloc(numlen * sizeof(char));
 
 	itos(num_str, i);
 	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
@@ -47,6 +48,7 @@ void format_i(va_list valist, char *buffer, int *index)
 void format_d(va_list valist, char *buffer, int *index)
 {
 	int i, j, numlen;
+	char *num_str;
 
 	i = va_arg(valist, int);
 
@@ -55,7 +57,7 @@ void format_d(va_list valist, char *buffer, int *index)
 	{
 		numlen += 1;
 	}
-	char num_str[numlen];
+	num_str = malloc(numlen * sizeof(char));
 
 	itos(num_str, i);
 	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
@@ -79,11 +81,10 @@ void format_d(va_list valist, char *buffer, int *index)
  */
 void format_s(va_list valist, char *buffer, int *index)
 {
-	int i, j, strlen;
+	int i, j;
 	char *s;
 
 	s = va_arg(valist, char*);
-	strlen = _strlen(s);
 
 	for (i = *index, j = 0; s[j] != '\0';  *index += 1, i++, j++)
 	{
