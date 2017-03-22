@@ -44,7 +44,13 @@ The argument passed for specifiers "%o", "%u", "%x", and "%X" are handled as fol
 "%u" takes in an unsigned integer and converts the argument into an unsigned decimal
 .IP
 "%x","%X" takes in an unsiged integer and converts the argument into an unsigned hexadecimal. For "x", letters "abcdef" are used while for "X", letters "ABCDEF" are used.
-	
+.IP p
+The void * pointer argument is printed in hexadecimal
+.IP r
+The argument passed in, as a string, is reversed.
+.IP R
+The argument passed in, as a string, is converted into the rot13 format.
+
 .SH BUGS
 No known bugs.
 .SH DEVELOPER(s) NOTES
