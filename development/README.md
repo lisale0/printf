@@ -4,6 +4,8 @@ This project is about recreating the C library function printf. The function pri
 ## Environment
 Our printf has been tested on Ubuntu 14.05.5 LTS
 
+(Note: unit test done in [Vagrant](https://www.vagrantup.com/)(1.9.1) and VirtualBox on an [Ubuntu](https://atlas.hashicorp.com/ubuntu/boxes/trusty64)).
+
 ## Repository Breakdown
 Once cloned over, the repository will contain the following files:
 
@@ -22,21 +24,6 @@ Once cloned over, the repository will contain the following files:
 | reset_buffer.c     | contains functions to reset the buffer |
 | hold     | hold             |
 
-## How to Use
-```
-$ git clone https://github.com/kjowong/printf.git
-$ gcc -Wall -Werror -Wextra -pendantic *.c
-```
-Compile all your *.c files in your directory and use _printf in your code.
-
-### How to declare in your code
-int _printf(const char *format, ...)
-
-### Using _printf Example
-```
-_printf("%s is now %d ", "Holberton", 2);
-$ Holberton is now 2 
-```
 ### Format tags
 Format tags implemented in _printf
 
@@ -50,6 +37,14 @@ Format tags implemented in _printf
 | x or X        | unsigned int to unsigned hexadecimal  |
 | p             | pointer address                       |
 | %             | no conversion, writes '%'             |
+
+## How to Use
+There are two ways to use the _printf function
+```
+$ git clone https://github.com/kjowong/printf.git
+$ gcc -Wall -Werror -Wextra -pendantic *.c
+```
+Compile all your *.c files in your directory and use _printf in your code.
 
 ## Use in code 
 ### How to use _printf in your code
