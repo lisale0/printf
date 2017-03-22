@@ -4,9 +4,16 @@ This project is about recreating the C library function printf. The function pri
 
 ## Requirements
 You will need the following files:
-|                       **File**                        |
+|   **File**    |           **Decription**              |
 |---------------|---------------------------------------|
-|              | characters                            |
+| printf.c      | contains main printf function         |
+| putchar.c     | contains putchar function             |
+| d or i        | int to signed decimal                 |
+| o             | unsigned int to unsigned octal        |
+| u             | unsigned int to unsigned decimal      |
+| x or X        | unsigned int to unsigned hexadecimal  |
+| %             | no conversion, writes '%'             |
+| cprintf.c             | characters                            |
 | s             | string of characters                  |
 | d or i        | int to signed decimal                 |
 | o             | unsigned int to unsigned octal        |
