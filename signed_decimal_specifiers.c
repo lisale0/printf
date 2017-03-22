@@ -22,7 +22,8 @@ void format_i(va_list valist, char *buffer, int *index)
 		numlen += 1;
 	}
 	num_str = malloc(numlen * sizeof(char));
-
+	if (num_str == NULL)
+		return;
 	itos(num_str, i);
 	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
 	{
@@ -56,7 +57,8 @@ void format_d(va_list valist, char *buffer, int *index)
 		numlen += 1;
 	}
 	num_str = malloc(numlen * sizeof(char));
-
+	if (num_str == NULL)
+		return;
 	itos(num_str, i);
 	for (i = *index, j = 0; j < numlen; *index += 1, i++, j++)
 	{
