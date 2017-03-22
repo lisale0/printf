@@ -39,6 +39,8 @@ Format tags implemented in _printf
 | x or X        | unsigned int to unsigned hexadecimal  |
 | p             | pointer address                       |
 | %             | no conversion, writes '%'             |
+| r             | reverses string input                 |
+| R             | converts string input into rot13      |
 
 ## How to Use
 There are two ways to use the _printf function in your code.
