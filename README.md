@@ -24,7 +24,7 @@ Once cloned over, the repository will contain the following files:
 | write_buffer.c     | contains functions to write to the buffer |
 | reset_buffer.c     | contains functions to reset the buffer |
 | rev_string.c     | contains functions to reverse strings |
-| rot13.c     | contains functions to converts a string to rot13 format |
+| rot_13.c     | contains functions to converts a string to rot13 format |
 
 ### Format tags
 Format tags implemented in _printf
@@ -41,6 +41,7 @@ Format tags implemented in _printf
 | %             | no conversion, writes '%'             |
 | r             | reverses string input                 |
 | R             | converts string input into rot13      |
+| b             | unsigned int to binary                |
 
 ## How to Use
 There are two ways to use the _printf function in your code.
