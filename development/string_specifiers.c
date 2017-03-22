@@ -1,44 +1,51 @@
 #include <stdio.h>
+
 /**
-* itos - int to string
-* @str: string
-* @num: num
-*
-* Return: char array
-*/
-char *itos(char str[], int num)
+ * itos - integer to string
+ * @str: char array
+ * @n: number
+ *
+ * Return: char array
+ */
+char *itos(char str[], long int n)
 {
-	int i, rem, len = 0, n, origin;
+	int i, temp, div, length, last;
 
-	n = num;
-	origin = num;
-	while (n != 0)
-	{
-		len++;
-		n /= 10;
-	}
-
+	div = 10;
+	last = n % 10;
 	i = 0;
-
-	if (num < 0)
+	if (last < 0)
 	{
-		len++;
+		last *= -1;
 		str[i] = '-';
-		num *= -1;
 		i++;
 	}
-	while (i < len)
+	n = (n / 10);
+	if (n < 0)
 	{
-		rem = num % 10;
-		num = num / 10;
-		if (origin < 0)
-			str[len - (i)] = rem + '0';
-		else
-			str[len - (i + 1)] = rem + '0';
-		i++;
+		n *= -1;
 	}
 
-	str[len] = '\0';
+	length = 0;
+	div = 1;
+	temp = n;
+
+	while (temp > 0)
+	{
+		length += 1;
+		div *= 10;
+		temp = temp / 10;
+	}
+
+	div = div / 10;
+	while (div >= 1)
+	{
+		str[i] = ((n / div) + '0');
+		n = n % div;
+		div /= 10;
+		i++;
+	}
+	str[i] = last + '0';
 	return (str);
 }
 
@@ -59,7 +66,6 @@ char *utos(char str[], unsigned int num)
 		len++;
 		n /= 10;
 	}
-
 	i = 0;
 
 	while (i < len)
@@ -75,8 +81,8 @@ char *utos(char str[], unsigned int num)
 	return (str);
 }
 /**
- * num_len - get length of num
- * @num: num
+ * num_len - getting the length of a number
+ * @num: the number
  *
  * Return: int
  */
