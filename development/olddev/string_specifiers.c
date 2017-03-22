@@ -15,8 +15,7 @@ void format_s(va_list valist, char *buffer, int *index)
 	char *s;
 
 	s = va_arg(valist, char*);
-	if (s == NULL)
-		s = "(null)";
+
 	for (i = *index, j = 0; s[j] != '\0';  *index += 1, i++, j++)
 	{
 		if (*index == 1024)
