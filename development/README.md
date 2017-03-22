@@ -1,8 +1,18 @@
 # Rewrite Printf in the C Programming Language
 
-### Description
-This project is about recreating the C library function printf. The function printf sends formatted output to stdout by formatting input and converting the input into a character string and outputs to `stdout`.
+This project is about recreating the C library function printf. The function printf sends formatted output to `stdout` (standard output stream) by formatting the argument(s) passed in and converting the arguments(s) into a character string. This version will be used as `_printf`.
 
+## Requirements
+You will need the following files:
+|                       **File**                        |
+|---------------|---------------------------------------|
+|              | characters                            |
+| s             | string of characters                  |
+| d or i        | int to signed decimal                 |
+| o             | unsigned int to unsigned octal        |
+| u             | unsigned int to unsigned decimal      |
+| x or X        | unsigned int to unsigned hexadecimal  |
+| %             | no conversion, writes '%'             |
 ## How to Use
 ```
 $ git clone git@github.com:kjowong/printf.git
@@ -25,8 +35,11 @@ Format tags implemented in _printf
 |---------------|---------------------------------------|
 | c             | characters                            |
 | s             | string of characters                  |
-| i or d        | signed decimal int                    |
-| R             | rot13 characters to string            |
+| d or i        | int to signed decimal                 |
+| o             | unsigned int to unsigned octal        |
+| u             | unsigned int to unsigned decimal      |
+| x or X        | unsigned int to unsigned hexadecimal  |
+| %             | no conversion, writes '%'             |
 
 ## File Breakdown 
 ### 
