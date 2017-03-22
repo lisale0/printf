@@ -41,6 +41,7 @@ Format tags implemented in _printf
 | %             | no conversion, writes '%'             |
 | r             | reverses string input                 |
 | R             | converts string input into rot13      |
+| b             | unsigned int to binary                |
 
 ## How to Use
 There are two ways to use the _printf function in your code.
