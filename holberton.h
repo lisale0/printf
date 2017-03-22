@@ -25,7 +25,7 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 void format_s(va_list valist, char *buffer, int *index);
 void format_c(va_list valist, char *buffer, int *index);
 void format_d(va_list valist, char *buffer, int *index);
-char *itos(char str[], int num);
+char *itos(char str[], long int num);
 char *utos(char str[], int num);
 int num_len(int num);
 int float_len(double f);
