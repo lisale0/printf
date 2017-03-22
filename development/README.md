@@ -4,7 +4,7 @@ This project is about recreating the C library function printf. The function pri
 ## Environment
 Our printf has been tested on Ubuntu 14.05.5 LTS
 
-(Note: unit test done in [Vagrant](https://www.vagrantup.com/)(1.9.1) and VirtualBox on an [Ubuntu](https://atlas.hashicorp.com/ubuntu/boxes/trusty64)).
+Tests done in VirtualBox on [Ubuntu](https://atlas.hashicorp.com/ubuntu/boxes/trusty64) via [Vagrant](https://www.vagrantup.com/)(1.9.1)
 
 ## Repository Breakdown
 Once cloned over, the repository will contain the following files:
@@ -39,12 +39,19 @@ Format tags implemented in _printf
 | %             | no conversion, writes '%'             |
 
 ## How to Use
-There are two ways to use the _printf function
+There are two ways to use the _printf function in your code.
+First step is to clone the repository into your directory
 ```
 $ git clone https://github.com/kjowong/printf.git
-$ gcc -Wall -Werror -Wextra -pendantic *.c
 ```
-Compile all your *.c files in your directory and use _printf in your code.
+Once that is done, you can create a static library or use the -I in gcc (details to come)
+
+### Compile with a static library for _printf
+Change your directory into the _printf directory in order to create your static library
+```
+$ cd printf
+```
+
 
 ## Use in code 
 ### How to use _printf in your code
@@ -63,3 +70,5 @@ This is an an example output:
 ```
 $ Let's try to print a simple sentence.
 ```
+$ gcc -Wall -Werror -Wextra -pendantic *.c
+Compile all your *.c files in your directory and use _printf in your code.
