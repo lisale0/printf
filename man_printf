@@ -2,10 +2,6 @@
 .SH NAME
 .B _printf - format data and print output into stdout
 .SH SYNOPSIS
-.IP 
-.I #include <stdio.h>
-.IP
-.I #include <stdarg.h>
 .IP
 .I #include "holberton.h"
 .IP
@@ -18,7 +14,7 @@
 The functions in _printf() produces output according to the format specifiers provided below. Each argument passed into _printf is written out into stdout, the standard output stream. The format controls the output in _printf.
 
 .SH RETURN VALUE
-Upon a successful return, _printf will return the number of characters printed. Null byte used to end estring outputs is excluded. 
+Upon a successful return, _printf will return the number of characters printed. Null byte used to end string outputs is excluded. _printf will return an exit status of -1 upon failure.
 
 .SH FORMAT OF FUNCTION
 The format of _printf is a character string and can included zero or more format specifiers, each matching zero or more arguments being passed in. Each format specifier begans with "%" followed by the character to the specific format specifier such as "%s". By default, arguments passed in must followed the order of the each format specifier. For example:
@@ -36,6 +32,10 @@ The argument passed for specifier "%c" is of type int. which is then converted t
 The argument passed is not converted and will simply be written as "%". To write out "%", format must be "%%". 
 .IP d,i
 The argument passed for specifiers "%d" and "%i" is an int argument converted into signed decimal notation. In _printf, the specifiers are handled the same way. The precision functionality, the number of digits that appears in beginning, is still in development and will be added at an later time.
+.IP r
+The argument passed for specifier "%r" has the same conversion functionality as "%s", but writes the output into the buffer in reverse order.
+.IP R
+The argument passed for specifier "%R" converts the argument from a string literal into rot13.
 .IP o,u,x,X
 The argument passed for specifiers "%o", "%u", "%x", and "%X" are handled as follows:
 .IP
@@ -45,9 +45,9 @@ The argument passed for specifiers "%o", "%u", "%x", and "%X" are handled as fol
 .IP
 "%x","%X" takes in an unsiged integer and converts the argument into an unsigned hexadecimal. For "x", letters "abcdef" are used while for "X", letters "ABCDEF" are used.
 	
-.SH SEE ALSO
-.I printf(3)
 .SH BUGS
 No known bugs.
+.SH DEVELOPER(s) NOTES
+This _printf function currently does not support special flags [+ , - , `, \0 , #], field, width or precision. They are currently in development.
 .SH AUTHORS
 Kimberly Wong, Lisa Leung
