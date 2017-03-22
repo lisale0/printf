@@ -93,7 +93,7 @@ $ Let's try to print a simple sentence.
 This _printf function currently does not support special flags [+ , - , `, \0 , #], field, width or precision.
 
 ## Known Bugs
-There are no known bugs that the time.
+There are no known bugs at the time.
 
 ### Authors
 *Kimberly Wong* - [Github](https://github.com/kjowong) || [Twitter](https://twitter.com/kjowong) || [email](kimberly.wong@holbertonschool.com)
