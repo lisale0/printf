@@ -10,7 +10,6 @@ char *itos(char str[], long int n)
 {
 	int i, temp, div, length, last;
 
-	div = 10;
 	last = n % 10;
 	i = 0;
 	if (last < 0)
