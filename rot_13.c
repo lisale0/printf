@@ -13,8 +13,8 @@ void format_R(va_list valist, char *buffer, int *index)
 	char *s;
 	int i, j;
 
-	char *s1 = "abcdefghijklmABCDEFGHIJKLM ,?!;'@-=+\"\\$%^&*()`~<>/:[]{}_|.";
-	char *s2 = "nopqrstuvwxyzNOPQRSTUVWXYZ ,?!;'@-=+\"\\$%^&*()`~<>/:[]{}_|.";
+	char *s1 = "abcdefghijklmABCDEFGHIJKLM ,?!;'@-=+\"\\$%^&*()`~<>/:[]{}_|.\n";
+	char *s2 = "nopqrstuvwxyzNOPQRSTUVWXYZ ,?!;'@-=+\"\\$%^&*()`~<>/:[]{}_|.\n";
 
 	s = va_arg(valist, char *);
 
@@ -31,6 +31,5 @@ void format_R(va_list valist, char *buffer, int *index)
 				buffer[*index] = s1[j];
 			}
 		}
-
 	}
 }
