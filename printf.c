@@ -7,17 +7,18 @@
 int _printf(const char *format, ...)
 {
 	char buffer[1024];
-	int i = 0, j = 0, a = 0;
+	int i, j = 0, a = 0, *index = &a;
 	va_list valist;
-	int *index = &a;
 	vtype_t spec[] = {
 		{'c', format_c}, {'d', format_d}, {'s', format_s}, {'i', format_i},
 		{'u', format_u}, {'%', format_perc}, {'x', format_h}, {'X', format_ch},
 		{'o', format_o}, {'b', format_b}, {'p', format_p}, {'r', format_r},
 		{'R', format_R}, {'\0', NULL}
 	};
+	if (!format)
+		return (-1);
 	va_start(valist, format);
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		for (; format[i] != '%' && format[i] != '\0'; *index += 1, i++)
 		{
@@ -40,7 +41,6 @@ int _printf(const char *format, ...)
 				}
 			}
 		}
-		i++;
 	}
 	va_end(valist);
 	buffer[*index] = '\0';
