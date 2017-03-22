@@ -15,6 +15,7 @@ Once cloned over, the repository will contain the following files:
 | printf.c      | contains main printf function         |
 | _putchar.c     | contains putchar function             |
 | string_specifiers.c | contains functions for **s** and **c** |
+| string_spec_helpers.c     | contains functions to help with string functions in string_specifiers.c|
 | signed_decimal_specifiers.c | contains functions for **d** and **i** |
 | unsigned_specifiers.c | contains functions for **o**, **u**, **x**, **X** |
 | binary_specifier.c     | contains functions for **b**|
@@ -22,7 +23,8 @@ Once cloned over, the repository will contain the following files:
 | write_percent specifiers.c | contains functions for **'%'** |
 | write_buffer.c     | contains functions to write to the buffer |
 | reset_buffer.c     | contains functions to reset the buffer |
-| hold     | hold             |
+| rev_string.c     | contains functions to reverse strings |
+| rot13.c     | contains functions to converts a string to rot13 format |
 
 ### Format tags
 Format tags implemented in _printf
@@ -87,5 +89,15 @@ This is an an example output:
 ```
 $ Let's try to print a simple sentence.
 ```
-$ gcc -Wall -Werror -Wextra -pendantic *.c
-Compile all your *.c files in your directory and use _printf in your code.
+## Notes
+This _printf function currently does not support special flags [+ , - , `, \0 , #], field, width or precision.
+
+## Known Bugs
+There are no known bugs that the time.
+
+### Authors
+*Kimberly Wong* - [Github](https://github.com/kjowong) || [Twitter](https://twitter.com/kjowong) || [email](kimberly.wong@holbertonschool.com)
+
+*Lisa Leung* - [Github](https://github.com/lisale0) || [Twitter](https://twitter.com/lisale01) || [email](lisa.leung@holbertonschool.com)
+
+#### Feedback and contributors welcomed. Reach out to either authors.
