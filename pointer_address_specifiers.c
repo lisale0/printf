@@ -28,8 +28,13 @@ void format_lx(va_list valist, char *buffer, int *index)
 	char *hexvalues;
 	char *hex;
 	void *a;
+	char *b;
 
 	a = va_arg(valist, void *);
+	b = "(nil)";
+	if (a == NULL)
+		for (i = 0; i < 5; i++, *index += 1)
+			buffer[*index] = b[i];
 	n = (unsigned long int)a;
 	hexvalues = "0123456789abcdef";
 	hex = malloc(14 * sizeof(char));
