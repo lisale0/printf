@@ -44,14 +44,31 @@ First step is to clone the repository into your directory
 ```
 $ git clone https://github.com/kjowong/printf.git
 ```
-Once that is done, you can create a static library or use the -I in gcc (details to come)
+Once that is done, you can create a static library or use the -I in gcc
 
 ### Compile with a static library for _printf
 Change your directory into the _printf directory in order to create your static library
 ```
 $ cd printf
 ```
-
+Compile all the `.c` files in _printf
+```
+gcc -Wall -Werror -Wextra -pedantic -c *.c
+```
+All your `.c` files should also have a corresponding `.o` file. Run the following to create your static library:
+```
+ar -rc lib<LIBRARY-NAME>.a *.o
+```
+To run your static library with your own `YOUR-FILE.c` file, use the following command:
+```
+gcc <YOUR-FILE>.c -L. -lib<LIBRARY-NAME> -o <OUT-NAME>
+```
+### Compile without a static library for _printf
+Make sure the _printf directory is in the same directory as your `YOUR-FILE.c` file and then run the following command:
+```
+gcc -Wall -Werror -Wextra -pedantic -I $PWD/printf prinft/*.c <YOUR-FILE>.c
+```
+The `-I` flag allows you to include the directory of the header file `holberton.h`. `$PWD/printf` takes the absolute path of the _print directory while `printf/*.c` compiles all your `.c` files in _printf
 
 ## Use in code 
 ### How to use _printf in your code
