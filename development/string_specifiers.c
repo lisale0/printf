@@ -11,21 +11,22 @@
  */
 void format_s(va_list valist, char *buffer, int *index)
 {
-	int i, j;
-	char *s;
+  int i, j;
+  char *s;
 
-	s = va_arg(valist, char*);
-
-	for (i = *index, j = 0; s[j] != '\0';  *index += 1, i++, j++)
+  s = va_arg(valist, char*);
+  if (s == NULL)
+    s = "(null)";
+  for (i = *index, j = 0; s[j] != '\0';  *index += 1, i++, j++)
+    {
+      if (*index == 1024)
 	{
-		if (*index == 1024)
-		{
-			_write_buffer(buffer, index);
-			reset_buffer(buffer);
-			*index = 0;
-		}
-		buffer[*index] = s[j];
+	  _write_buffer(buffer, index);
+	  reset_buffer(buffer);
+	  *index = 0;
 	}
+      buffer[*index] = s[j];
+    }
 }
 /**
  * format_c - specificer c
@@ -37,15 +38,15 @@ void format_s(va_list valist, char *buffer, int *index)
  */
 void format_c(va_list valist, char *buffer, int *index)
 {
-	char s;
+  char s;
 
-	s = va_arg(valist, int);
-	if (*index == 1024)
-	{
-		_write_buffer(buffer, index);
-		reset_buffer(buffer);
-		*index = 0;
-	}
-	buffer[*index] = s;
-	*index += 1;
+  s = va_arg(valist, int);
+  if (*index == 1024)
+    {
+      _write_buffer(buffer, index);
+      reset_buffer(buffer);
+      *index = 0;
+    }
+  buffer[*index] = s;
+  *index += 1;
 }
