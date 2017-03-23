@@ -2,12 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * format_b - specificer for b
- * @valist: valist
- * @buffer: buffer
- * @index: index
- *
- * Return: void
+ * format_b - function to convert to unsigned integer to binary
+ * @valist: taking in arguments
+ * @buffer: values stored
+ * @index: tracks the index position
  */
 void format_b(va_list valist, char *buffer, int *index)
 {
