@@ -1,25 +1,20 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * format_p - print an address
- * @valist: valist
- * @buffer: buffer
- * @index: index
- *
- * Return: return void;
+ * format_p - function that print a pointer address
+ * @valist: argument list
+ * @buffer: values stored
+ * @index: tracks the index position
  */
 void format_p(va_list valist, char *buffer, int *index)
 {
-
 	format_lx(valist, buffer, index);
 }
 /**
- * format_lx - print long address
- * @valist: the number to convert
- * @buffer: buffer
- * @index: index
- *
- * Return: void
+ * format_lx - function that prints a long address
+ * @valist: argument list
+ * @buffer: values stored
+ * @index: tracks the index position
  */
 void format_lx(va_list valist, char *buffer, int *index)
 {
@@ -44,7 +39,6 @@ void format_lx(va_list valist, char *buffer, int *index)
 		hex[i] = hexvalues[n % 16];
 		n /= 16;
 	}
-
 	i += 2;
 	hex[13] = '0';
 	hex[12] = 'x';
