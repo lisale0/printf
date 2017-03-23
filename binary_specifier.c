@@ -18,9 +18,9 @@ void format_b(va_list valist, char *buffer, int *index)
 
 	n = va_arg(valist, int);
 	binaryvalues = "01";
-
 	binary = malloc(33 * sizeof(char));
-
+	if (binary == NULL)
+		return;
 	if (n == 0)
 	{
 		buffer[*index] = '0';
@@ -38,4 +38,5 @@ void format_b(va_list valist, char *buffer, int *index)
 			buffer[*index] = binary[i];
 		}
 	}
+	free(binary);
 }

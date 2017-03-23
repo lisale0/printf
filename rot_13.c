@@ -17,7 +17,6 @@ void format_R(va_list valist, char *buffer, int *index)
 	char *s2 = "nopqrstuvwxyzNOPQRSTUVWXYZ ,?!;'@-=+\"\\$%^&*()`~<>/:[]{}_|.\n";
 
 	s = va_arg(valist, char *);
-
 	for (i = 0; s[i] != '\0'; i++, *index += 1)
 	{
 		for (j = 0; s1[j] != '\0'; j++)

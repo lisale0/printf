@@ -35,4 +35,5 @@ void format_d(va_list valist, char *buffer, int *index)
 		}
 		buffer[*index] = num_str[j];
 	}
+	free(num_str);
 }
