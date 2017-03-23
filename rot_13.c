@@ -1,12 +1,9 @@
 #include "holberton.h"
-
 /**
- * format_R - format in rot13
- * @valist: valist
- * @buffer: buffer
- * @index: index
- *
- * Return: void
+ * format_R - functtion that converts a string into rot13
+ * @valist: argument passed
+ * @buffer: values stored
+ * @index: tracks index position
  */
 void format_R(va_list valist, char *buffer, int *index)
 {
