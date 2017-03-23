@@ -14,7 +14,6 @@ typedef struct vtype
 	void (*f)();
 } vtype_t;
 int _printf(const char *format, ...);
-int _putchar(char c);
 void print_char(va_list valist);
 void print_int(va_list valist);
 void print_float(va_list valist);
