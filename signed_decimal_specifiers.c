@@ -2,12 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * format_d - specificer d
- * @valist: valist
- * @buffer: buffer
- * @index: index
- *
- * Return: void
+ * format_d - function that returns an int to signed decimal
+ * @valist: arguments passed
+ * @buffer: values stored
+ * @index: tracks index position
  */
 void format_d(va_list valist, char *buffer, int *index)
 {
