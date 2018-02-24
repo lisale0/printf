@@ -8,14 +8,14 @@ int _printf(const char *format, ...)
 {
 	char buffer[1024];
 	int i, j = 0, a = 0, *index = &a;
-	va_list valist;
+	va_list valist; /*va_list is the variety of arguments passed in ...*/
 	vtype_t spec[] = {
 		{'c', format_c}, {'d', format_d}, {'s', format_s}, {'i', format_d},
 		{'u', format_u}, {'%', format_perc}, {'x', format_h}, {'X', format_ch},
 		{'o', format_o}, {'b', format_b}, {'p', format_p}, {'r', format_r},
 		{'R', format_R}, {'\0', NULL}
 	};
-	if (!format)
+	if (!format) /*format example: Length:[%d, %i]\n" when _printf("Length:[%d, %i]\n", len, len); is called*/
 		return (-1);
 	va_start(valist, format);
 	for (i = 0; format[i] != '\0'; i++)
