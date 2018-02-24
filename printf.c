@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	char buffer[1024];
-	int i, j = 0, a = 0, *index = &a;
+	int i, j = 0, a = 0, *index = &a; /*initialize index to address of a, which is 0; index keeps track of position in buffer*/
 	va_list valist; /*va_list is the variety of arguments passed in ...*/
 	vtype_t spec[] = {
 		{'c', format_c}, {'d', format_d}, {'s', format_s}, {'i', format_d},
