@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	};
 	if (!format) /*format example: Length:[%d, %i]\n" when _printf("Length:[%d, %i]\n", len, len); is called*/
 		return (-1);
-	va_start(valist, format);
+	va_start(valist, format); /*format is the last parameter, format is ignored*/
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		for (; format[i] != '%' && format[i] != '\0'; *index += 1, i++)
