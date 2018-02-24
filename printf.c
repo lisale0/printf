@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
-	va_end(valist);
+	va_end(valist); /*clears out the list*/
 	buffer[*index] = '\0';
 	_write_buffer(buffer, index);
 	return (*index);
