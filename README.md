@@ -47,7 +47,7 @@ Format tags implemented in _printf
 There are two ways to use the _printf function in your code.
 First step is to clone the repository into your directory
 ```
-$ git clone https://github.com/kjowong/printf.git
+$ git clone https://github.com/lisale0/printf.git
 ```
 Once that is done, you can create a static library or use the -I in gcc
 
