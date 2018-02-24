@@ -20,8 +20,10 @@ int _printf(const char *format, ...)
 	va_start(valist, format); /*format is the last parameter, format is ignored*/
 	for (i = 0; format[i] != '\0'; i++)
 	{
+		/*write the format string into buffer until it hits either % or \0*/
 		for (; format[i] != '%' && format[i] != '\0'; *index += 1, i++)
 		{
+			/*if buffer is full write and reset buffer*/
 			if (*index == 1024)
 			{	_write_buffer(buffer, index);
 				reset_buffer(buffer);
